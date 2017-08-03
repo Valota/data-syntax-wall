@@ -1,0 +1,116 @@
+{
+    "vType": "object",
+    "data": {
+        "vType": "array",
+        "elem": {
+            "vType": "object",
+            "id": {
+                "vType": "id",
+                "required": 1
+            },
+            "lang": {
+                "vType": "language",
+                "required": 0
+            },
+            "post": {
+                "vType": "text",
+                "required": 1
+            },
+            "md5": {
+                "vType": "text"
+            },
+            "likes": {
+                "vType": "int",
+                "required": 1
+            },
+            "displayTime": {
+                "vType": "int"
+            },
+            "user": {
+                "vType": "object",
+                "required": 1,
+                "name": {
+                    "vType": "text",
+                    "required": 1
+                },
+                "avatar": {
+                    "vType": "url",
+                    "required": 0
+                }
+            },
+            "image": {
+                "vType": "object",
+                "url": {
+                    "vType": "url",
+                    "required": 1
+                }
+            },
+            "published": {
+                "vType": "int",
+                "required": 1
+            },
+            "deleted": {
+                "vType": "boolean"
+            },
+            "comments": {
+                "vType": "array",
+                "required": 0,
+                "elem": {
+                    "vType": "object",
+                    "published": {
+                        "vType": "int",
+                        "required": 1
+                    },
+                    "deleted": {
+                        "vType": "boolean",
+                        "required": 1
+                    },
+                    "comment": {
+                        "vType": "text",
+                        "required": 1
+                    },
+                    "user": {
+                        "vType": "object",
+                        "required": 1,
+                        "name": {
+                            "vType": "text",
+                            "required": 1
+                        },
+                        "avatar": {
+                            "vType": "url",
+                            "required": 0
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "config": {
+        "vType": "object",
+        "required": 1,
+        "name": {
+            "vType": "text",
+            "required": 1
+        },
+        "bell": {
+            "vType": "object",
+            "required": 0,
+            "user": {
+                "vType": "object",
+                "required": 0,
+                "name": {
+                    "vType": "text",
+                    "required": 1
+                },
+                "avatar": {
+                    "vType": "url",
+                    "required": 0
+                }
+            },
+            "date": {
+                "vType": "int",
+                "required": 1
+            }
+        }
+    }
+}
