@@ -34,8 +34,7 @@
                     "required": 1
                 },
                 "avatar": {
-                    "vType": "url",
-                    "required": 0
+                    "vType": "url"
                 }
             },
             "image": {
@@ -43,7 +42,36 @@
                 "url": {
                     "vType": "url",
                     "required": 1
+                },
+                "thumbnail": {
+                    "vType": "url"
+                },
+                "type": {
+                    "vType": "text"
                 }
+            },
+            "pages": {
+                "vType": "array",
+                "elem": {
+                    "vType": "object",
+                    "url": {
+                        "vType": "url",
+                        "required": 1
+                    },
+                    "thumbnail": {
+                        "vType": "url"
+                    },
+                    "type": {
+                        "vType": "text"
+                    },
+                    "displayTime": {
+                        "vType": "int"
+                    }
+                }
+
+            },
+            "hideInEmbedded": {
+                "vType": "boolean"
             },
             "published": {
                 "vType": "int",
@@ -54,7 +82,6 @@
             },
             "comments": {
                 "vType": "array",
-                "required": 0,
                 "elem": {
                     "vType": "object",
                     "published": {
