@@ -109,7 +109,20 @@
                         }
                     }
                 }
+            },
+            "conf": {
+                "vType": "object",
+                "required": 0,
+                "layout": {
+                    "vType": "text",
+                    "required": 0
+                },
+                "expires": {
+                    "vType": "text",
+                    "required": 0
+                }
             }
+
         }
     },
     "config": {
