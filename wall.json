@@ -1,156 +1,193 @@
 {
-    "vType": "object",
-    "data": {
-        "vType": "array",
-        "elem": {
-            "vType": "object",
-            "id": {
-                "vType": "id",
-                "required": 1
-            },
-            "lang": {
-                "vType": "language",
-                "required": 0
-            },
-            "post": {
-                "vType": "text",
-                "required": 1
-            },
-            "md5": {
-                "vType": "text"
-            },
-            "likes": {
-                "vType": "int",
-                "required": 1
-            },
-            "displayTime": {
-                "vType": "int"
-            },
-            "user": {
-                "vType": "object",
-                "required": 1,
-                "name": {
-                    "vType": "text",
-                    "required": 1
-                },
-                "avatar": {
-                    "vType": "url"
-                }
-            },
-            "image": {
-                "vType": "object",
-                "url": {
-                    "vType": "url",
-                    "required": 1
-                },
-                "thumbnail": {
-                    "vType": "url"
-                },
-                "type": {
-                    "vType": "text"
-                }
-            },
-            "pages": {
-                "vType": "array",
-                "elem": {
-                    "vType": "object",
-                    "url": {
-                        "vType": "url",
-                        "required": 1
-                    },
-                    "thumbnail": {
-                        "vType": "url"
-                    },
-                    "type": {
-                        "vType": "text"
-                    },
-                    "displayTime": {
-                        "vType": "int"
-                    }
-                }
-
-            },
-            "hideInEmbedded": {
-                "vType": "boolean"
-            },
-            "published": {
-                "vType": "int",
-                "required": 1
-            },
-            "deleted": {
-                "vType": "boolean"
-            },
-            "comments": {
-                "vType": "array",
-                "elem": {
-                    "vType": "object",
-                    "published": {
-                        "vType": "int",
-                        "required": 1
-                    },
-                    "deleted": {
-                        "vType": "boolean",
-                        "required": 1
-                    },
-                    "comment": {
-                        "vType": "text",
-                        "required": 1
-                    },
-                    "user": {
-                        "vType": "object",
-                        "required": 1,
-                        "name": {
-                            "vType": "text",
-                            "required": 1
-                        },
-                        "avatar": {
-                            "vType": "url",
-                            "required": 0
-                        }
-                    }
-                }
-            },
-            "conf": {
-                "vType": "object",
-                "required": 0,
-                "layout": {
-                    "vType": "text",
-                    "required": 0
-                },
-                "expires": {
-                    "vType": "text",
-                    "required": 0
-                }
-            }
-
-        }
-    },
-    "config": {
-        "vType": "object",
-        "required": 1,
-        "name": {
-            "vType": "text",
-            "required": 1
-        },
-        "bell": {
-            "vType": "object",
-            "required": 0,
-            "user": {
-                "vType": "object",
-                "required": 0,
-                "name": {
-                    "vType": "text",
-                    "required": 1
-                },
-                "avatar": {
-                    "vType": "url",
-                    "required": 0
-                }
-            },
-            "date": {
-                "vType": "int",
-                "required": 1
-            }
-        }
-    }
+  "$id": "https:\/\/raw.githubusercontent.com\/Valota\/data-syntax-wall\/v2.0.0\/wall.json",
+  "$schema": "http:\/\/json-schema.org\/draft-07\/schema#",
+  "description": "Wall data syntax for Valotalive",
+  "type": "object",
+  "properties": {
+	"data": {
+	  "type": "array",
+	  "items": {
+		"type": "object",
+		"properties": {
+		  "id": {
+			"type": [
+			  "string",
+			  "integer"
+			]
+		  },
+		  "lang": {
+			"type": "string"
+		  },
+		  "post": {
+			"type": "string"
+		  },
+		  "md5": {
+			"type": "string"
+		  },
+		  "likes": {
+			"type": "integer"
+		  },
+		  "displayTime": {
+			"type": "integer"
+		  },
+		  "user": {
+			"type": "object",
+			"properties": {
+			  "name": {
+				"type": "string"
+			  },
+			  "avatar": {
+				"type": "string",
+				"format": "uri"
+			  }
+			}
+		  },
+		  "image": {
+			"type": "object",
+			"properties": {
+			  "url": {
+				"type": "string",
+				"format": "uri"
+			  },
+			  "thumbnail": {
+				"type": "string",
+				"format": "uri"
+			  },
+			  "type": {
+				"type": "string"
+			  }
+			}
+		  },
+		  "pages": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "properties": {
+				"url": {
+				  "type": "string",
+				  "format": "uri"
+				},
+				"thumbnail": {
+				  "type": "string",
+				  "format": "uri"
+				},
+				"type": {
+				  "type": "string"
+				},
+				"displayTime": {
+				  "type": "integer"
+				}
+			  },
+			  "required": [
+				"url"
+			  ]
+			}
+		  },
+		  "hideInEmbedded": {
+			"type": [
+			  "integer",
+			  "boolean"
+			]
+		  },
+		  "published": {
+			"type": "integer"
+		  },
+		  "deleted": {
+			"type": [
+			  "integer",
+			  "boolean"
+			]
+		  },
+		  "comments": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "properties": {
+				"published": {
+				  "type": "integer"
+				},
+				"deleted": {
+				  "type": [
+					"integer",
+					"boolean"
+				  ]
+				},
+				"comment": {
+				  "type": "string"
+				},
+				"user": {
+				  "type": "object",
+				  "properties": {
+					"name": {
+					  "type": "string"
+					},
+					"avatar": {
+					  "type": "string",
+					  "format": "uri"
+					}
+				  }
+				}
+			  },
+			  "required": [
+				"published",
+				"deleted",
+				"comment",
+				"user"
+			  ]
+			}
+		  },
+		  "conf": {
+			"type": "object",
+			"properties": {
+			  "layout": {
+				"type": "string"
+			  },
+			  "expires": {
+				"type": "string"
+			  }
+			}
+		  }
+		},
+		"required": [
+		  "id",
+		  "post",
+		  "likes",
+		  "user",
+		  "image",
+		  "published"
+		]
+	  }
+	},
+	"config": {
+	  "type": "object",
+	  "properties": {
+		"name": {
+		  "type": "string"
+		},
+		"bell": {
+		  "type": "object",
+		  "properties": {
+			"user": {
+			  "type": "object",
+			  "properties": {
+				"name": {
+				  "type": "string"
+				},
+				"avatar": {
+				  "type": "string",
+				  "format": "uri"
+				}
+			  }
+			},
+			"date": {
+			  "type": "integer"
+			}
+		  }
+		}
+	  }
+	}
+  },
+  "required": [
+	"config"
+  ]
 }
