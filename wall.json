@@ -1,5 +1,5 @@
 {
-  "$id": "https:\/\/raw.githubusercontent.com\/Valota\/data-syntax-wall\/v2.0.0\/wall.json",
+  "$id": "https:\/\/raw.githubusercontent.com\/Valota\/data-syntax-wall\/v3.0.0\/wall.json",
   "$schema": "http:\/\/json-schema.org\/draft-07\/schema#",
   "description": "Wall data syntax for Valotalive",
   "type": "object",
@@ -13,10 +13,12 @@
 			"type": [
 			  "string",
 			  "integer"
-			]
+			],
+			"description": "id"
 		  },
 		  "lang": {
-			"type": "string"
+			"type": "string",
+			"description": "language"
 		  },
 		  "post": {
 			"type": "string"
@@ -38,7 +40,7 @@
 			  },
 			  "avatar": {
 				"type": "string",
-				"format": "uri"
+				"description": "uri to content"
 			  }
 			}
 		  },
@@ -47,47 +49,9 @@
 			"properties": {
 			  "url": {
 				"type": "string",
-				"format": "uri"
-			  },
-			  "thumbnail": {
-				"type": "string",
-				"format": "uri"
-			  },
-			  "type": {
-				"type": "string"
+				"description": "uri to content"
 			  }
 			}
-		  },
-		  "pages": {
-			"type": "array",
-			"items": {
-			  "type": "object",
-			  "properties": {
-				"url": {
-				  "type": "string",
-				  "format": "uri"
-				},
-				"thumbnail": {
-				  "type": "string",
-				  "format": "uri"
-				},
-				"type": {
-				  "type": "string"
-				},
-				"displayTime": {
-				  "type": "integer"
-				}
-			  },
-			  "required": [
-				"url"
-			  ]
-			}
-		  },
-		  "hideInEmbedded": {
-			"type": [
-			  "integer",
-			  "boolean"
-			]
 		  },
 		  "published": {
 			"type": "integer"
@@ -123,7 +87,7 @@
 					},
 					"avatar": {
 					  "type": "string",
-					  "format": "uri"
+					  "description": "uri to content"
 					}
 				  }
 				}
@@ -134,17 +98,6 @@
 				"comment",
 				"user"
 			  ]
-			}
-		  },
-		  "conf": {
-			"type": "object",
-			"properties": {
-			  "layout": {
-				"type": "string"
-			  },
-			  "expires": {
-				"type": "string"
-			  }
 			}
 		  }
 		},
@@ -175,7 +128,7 @@
 				},
 				"avatar": {
 				  "type": "string",
-				  "format": "uri"
+				  "description": "uri to content"
 				}
 			  }
 			},
